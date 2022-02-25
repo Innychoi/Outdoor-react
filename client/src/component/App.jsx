@@ -112,7 +112,7 @@ function App() {
           <h1 className="recommended">Recommended Products</h1>
           <RelatedContainer>
             <Related />
-            <MyOutfit />
+            {/* <MyOutfit /> */}
           </RelatedContainer>
           <Reviews />
           {modalClicked && (
