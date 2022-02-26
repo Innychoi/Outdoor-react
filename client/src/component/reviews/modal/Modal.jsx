@@ -14,7 +14,7 @@ function ReviewModal() {
   const [input, setInput] = useState({
     product_id: productId, name: '', body: '', summary: '', email: '', rating: 1, photos: [], recommend: false, characteristics: {},
   });
-console.log(input);
+
   function sendPost() {
     console.log(input);
     axios.post('/reviews', input)

@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import Reviews from './reviews/Reviews';
 import ReviewModal from './reviews/modal/Modal';
+// const ReviewModalLazy = React.lazy(() => import('./reviews/modal/Modal'));
 // eslint-disable-next-line import/no-named-as-default
 import Related from './related/Related';
 import Overview from './overview/Overview';
@@ -11,33 +12,6 @@ import MyOutfit from './related/MyOutfit';
 import { Container, RelatedContainer } from './reviews/Review.styles';
 
 function App() {
-  // const [globalProductId, setGlobalProductId] = useState(40344);
-  // const [globalProductStyle, setGlobalProductStyle] = useState();
-  // const [globalTheRelatedInfo, setGlobalTheRelatedInfo] = useState('hello');
-  // const [modalClicked, setModalClicked] = useState(false);
-  // const [globalProductInfo, setGlobalProductInfo] = useState(40344);
-  // const [globalAverage, setGlobalState] = useState(0);
-  // const [currentSize, setCurrentSize] = useState(0);
-  // const [currentQuantity, setCurrentQuantity] = useState(0);
-  // console.log(globalProductStyle);
-
-  // const productIdSetting = {
-  //   productId: globalProductId,
-  //   productInfo: globalProductInfo,
-  //   productStyle: globalProductStyle,
-  //   theRelatedInfo: globalTheRelatedInfo,
-  //   modalStatus: modalClicked,
-  //   currentSize: currentSize,
-  //   currentQuantity: currentQuantity,
-  //   setGlobalProductInfo,
-  //   setGlobalProductId,
-  //   setGlobalProductStyle,
-  //   setGlobalTheRelatedInfo,
-  //   setModalClicked,
-  //   setCurrentSize,
-  //   setCurrentQuantity,
-  // };
-
   const [globalProductId, setGlobalProductId] = useState(40344);
   const [globalProductStyle, setGlobalProductStyle] = useState();
   const [globalTheRelatedInfo, setGlobalTheRelatedInfo] = useState('hello');
@@ -51,23 +25,6 @@ function App() {
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
   const [photoModal, setPhotoModal] = useState(false);
   const [reviewPhotos, setReviewPhotos] = useState([]);
-
-  // const productIdSetting = {
-  //   productId: globalProductId,
-  //   productInfo: globalProductInfo,
-  //   productStyle: globalProductStyle,
-  //   theRelatedInfo: globalTheRelatedInfo,
-  //   modalStatus: modalClicked,
-  //   currentSize,
-  //   currentQuantity,
-  //   setGlobalProductInfo,
-  //   setGlobalProductId,
-  //   setGlobalProductStyle,
-  //   setGlobalTheRelatedInfo,
-  //   setModalClicked,
-  //   setCurrentSize,
-  //   setCurrentQuantity,
-  // };
 
   const value = useMemo(() => (
     {
@@ -101,6 +58,8 @@ function App() {
   // eslint-disable-next-line max-len
   ), [globalProductId, globalProductInfo, globalProductStyle, globalTheRelatedInfo, modalClicked, modalReviewClicked, globalAverage, metaCharacteristics, reviewSubmitted, photoModal, reviewPhotos, currentSize,
     currentQuantity]);
+
+
 
   return (
     <div>
