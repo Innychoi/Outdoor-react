@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import Reviews from './reviews/Reviews';
 import ReviewModal from './reviews/modal/Modal';
-// const ReviewModalLazy = React.lazy(() => import('./reviews/modal/Modal'));
+
+// const ReviewModal = React.lazy(() => import('./reviews/modal/Modal'));
 // eslint-disable-next-line import/no-named-as-default
 import Related from './related/Related';
 import Overview from './overview/Overview';
@@ -59,7 +60,10 @@ function App() {
   ), [globalProductId, globalProductInfo, globalProductStyle, globalTheRelatedInfo, modalClicked, modalReviewClicked, globalAverage, metaCharacteristics, reviewSubmitted, photoModal, reviewPhotos, currentSize,
     currentQuantity]);
 
-
+    // const [ReviewModal, setReviewModal] = useState(null);
+    // import('./reviews/modal/Modal').then((modal) => {
+    //   setReviewModal(modal.ReviewModal);
+    // });
 
   return (
     <div>

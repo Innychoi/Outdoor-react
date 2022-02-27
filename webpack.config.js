@@ -1,4 +1,6 @@
 const path = require('path');
+const CompressionPlugin = require('compression-webpack-plugin');
+const zopfli = require('@gfx/zopfli');
 
 const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist');
@@ -11,6 +13,16 @@ module.exports = {
     path: DIST_DIR,
   },
   devtool: 'source-map',
+  plugins: [
+    new CompressionPlugin({
+      compressionOptions: {
+        numiterations: 15,
+      },
+      algorithm(input, compressionOptions, callback) {
+        return zopfli.gzip(input, compressionOptions, callback);
+      },
+    }),
+  ],
   module: {
     rules: [
       {
@@ -31,6 +43,7 @@ module.exports = {
                   regenerator: true,
                 },
               ],
+              '@babel/plugin-syntax-dynamic-import',
             ],
           },
         },
