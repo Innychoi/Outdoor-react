@@ -1,13 +1,13 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, Suspense } from 'react';
 import Reviews from './reviews/Reviews';
-import ReviewModal from './reviews/modal/Modal';
-
-// const ReviewModal = React.lazy(() => import('./reviews/modal/Modal'));
+// import ReviewModal from './reviews/modal/Modal';
+const ReviewModal = React.lazy(() => import('./reviews/modal/Modal'));
 // eslint-disable-next-line import/no-named-as-default
 import Related from './related/Related';
 import Overview from './overview/Overview';
 import AppContext from './AppContext';
-import ReviewPhotoModal from './reviews/reviewPhotos/modal/ReviewPhotoModal';
+const ReviewPhotoModal = React.lazy(() => import('./reviews/reviewPhotos/modal/ReviewPhotoModal'));
+// import ReviewPhotoModal from './reviews/reviewPhotos/modal/ReviewPhotoModal';
 import { Modal } from './related/Modal';
 import MyOutfit from './related/MyOutfit';
 import { Container, RelatedContainer } from './reviews/Review.styles';
@@ -69,8 +69,16 @@ function App() {
     <div>
       <AppContext.Provider value={value}>
         <Container>
-          {modalReviewClicked && <ReviewModal />}
-          {photoModal && <ReviewPhotoModal />}
+          {modalReviewClicked &&
+            <Suspense fallback={<div>Loading...</div>}>
+            <ReviewModal />
+            </Suspense>
+          }
+          {photoModal &&
+          <Suspense fallback={<div>Loading...</div>}>
+          <ReviewPhotoModal />
+          </Suspense>
+          }
           <Overview />
           <h1 className="recommended">Recommended Products</h1>
           <RelatedContainer>
