@@ -1,7 +1,6 @@
 # FEC-Web-Application
 
 ![](https://media.giphy.com/media/1AEbvlmEbQGW9Zak9R/giphy.gif)
-![Alt Text](https://media.giphy.com/media/1AEbvlmEbQGW9Zak9R/giphy.gif)
 
 ## Description
 
