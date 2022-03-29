@@ -11,7 +11,7 @@ export default function Navbar() {
     <Nav>
       <NavbarContainer>
         <NavLogo to="/">
-          TEAM DRUID
+          OUTDOOR REACT
         </NavLogo>
       </NavbarContainer>
       <Cart />
